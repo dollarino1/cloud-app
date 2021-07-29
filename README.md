@@ -1,2 +1,3 @@
 # cloud-app
-Full-Stack Cloud storage application
+MERN Stack Cloud storage application.
+<strong>Technologies:</strong> MongoDB, ExpressJS, React, Node.js
