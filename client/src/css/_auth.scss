@@ -1,0 +1,46 @@
+.auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth__wrapper {
+    position: fixed;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    input {
+        margin-bottom: 15px;
+        border: none;
+        border: 1px solid rgba(0,0,0,.1);
+        border-radius: 2px;
+        outline: none;
+        padding: 5px;
+    }
+    input:focus {
+        border: 1px solid rgb(68, 83, 68);
+    }
+    label {
+        color: white;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    button {
+        display: block;
+        float: right;
+        line-height: 11pt * 2;
+        padding: 0 15px;
+        border: none;
+        background: #55a785;
+        color: white;
+        letter-spacing: 2px;
+        transition: .2s all ease-in-out;
+        border-bottom: 2px solid transparent;
+        outline: none;
+    }
+    button:hover {
+        background: inherit;
+        background: #55a78534;
+        border-bottom: 2px solid #55a785;
+    }
+}

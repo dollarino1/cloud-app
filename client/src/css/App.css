@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #1f1313;
+  color: #fafafa;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+ul {
+  max-width: 1120px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navbar__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar__item {
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  letter-spacing: 0.1em;
+  border-radius: 24px;
+}
+
+.navbar__item:first-of-type {
+  margin-right: 30px;
+}
+
+.navbar__item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  display: initial;
+}
+
+.auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.auth__wrapper {
+  position: fixed;
+  top: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+}
+
+.auth__wrapper input {
+  margin-bottom: 15px;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  outline: none;
+  padding: 5px;
+}
+
+.auth__wrapper input:focus {
+  border: 1px solid #445344;
+}
+
+.auth__wrapper label {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.auth__wrapper button {
+  display: block;
+  float: right;
+  line-height: 22pt;
+  padding: 0 15px;
+  border: none;
+  background: #55a785;
+  color: white;
+  letter-spacing: 2px;
+  -webkit-transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+}
+
+.auth__wrapper button:hover {
+  background: inherit;
+  background: #55a78534;
+  border-bottom: 2px solid #55a785;
+}
+
+footer {
+  position: fixed;
+  bottom: 0%;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1120px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=App.css.map */
