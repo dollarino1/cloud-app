@@ -1,9 +1,14 @@
 footer {
-    position: fixed;
-    bottom: 0%;
+    position: sticky;
+    top: 100%;
+    background-color: $bar-bg;
+    width: 100vw;
+    padding: 20px 0;
+
 }
 .footer {
+    width: 1140px;
+    margin: 0 auto;
     display: flex;
-    width: 1120px;
     justify-content: space-between;
 }

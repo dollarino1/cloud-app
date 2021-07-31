@@ -8,15 +8,18 @@ import './css/App.css'
 function App() {
   return (
     <BrowserRouter >
-      <div className='wrapper'>
+      <div className='app'>
         <Navbar />
 
-        <Switch>
-          <Route path='/registration' component={Registration} exact={true} />
-          <Route path='/login' component={Login} exact={true}  />
-          <Redirect to='/registration' />
-        </Switch>
-        
+        <div className='wrapper'>
+          <Switch>
+            <Route path='/registration' component={Registration} exact={true} />
+            <Route path='/login' component={Login} exact={true}  />
+            <Redirect to='/registration' />
+          </Switch>
+        </div>
+
+
         <Footer />
       </div>
     </BrowserRouter>

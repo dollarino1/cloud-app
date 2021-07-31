@@ -3,22 +3,30 @@
 $font-color: #fafafa;
 $font-roboto: 'Roboto', sans-serif;
 
+$bar-bg: rgb(24, 46, 53);
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    background-color: #1f1313;
+    background-color: #1d1e1f;
     color: $font-color;
     font-family: $font-roboto;
 }
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
 .wrapper {
-    max-width: 1120px;
+    max-width: 1140px;
     margin: 0 auto;
 }
 ul {
-    max-width: 1120px;
+    max-width: 1140px;
     
 }
 li {
