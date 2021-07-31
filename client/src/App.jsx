@@ -4,25 +4,31 @@ import Login from './components/Private/Login';
 import Navbar from './components/Private/Navbar'
 import Registration from './components/Private/Registration';
 import './css/App.css'
+import { createContext } from 'react';
+
+export const Context = createContext(null)
 
 function App() {
   return (
-    <BrowserRouter >
-      <div className='app'>
-        <Navbar />
+    <Context.Provider>
+      <BrowserRouter >
+        <div className='app'>
+          <Navbar />
 
-        <div className='wrapper'>
-          <Switch>
-            <Route path='/registration' component={Registration} exact={true} />
-            <Route path='/login' component={Login} exact={true}  />
-            <Redirect to='/registration' />
-          </Switch>
+          <div className='wrapper'>
+            <Switch>
+              <Route path='/registration' component={Registration} exact={true} />
+              <Route path='/login' component={Login} exact={true}  />
+              <Redirect to='/registration' />
+            </Switch>
+          </div>
+
+
+          <Footer />
         </div>
-
-
-        <Footer />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Context.Provider>
+    
   );
 }
 
