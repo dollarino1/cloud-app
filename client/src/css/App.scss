@@ -1,7 +1,7 @@
-//  font-family: 'Roboto', sans-serif;
+//  font-family: 'Georama', sans-serif;
 
 $font-color: #fafafa;
-$font-roboto: 'Roboto', sans-serif;
+$font-main: 'Georama', sans-serif;
 
 $bar-bg: rgb(24, 46, 53);
 
@@ -13,7 +13,7 @@ $bar-bg: rgb(24, 46, 53);
 body {
     background-color: #1d1e1f;
     color: $font-color;
-    font-family: $font-roboto;
+    font-family: $font-main
 }
 .app {
     display: flex;

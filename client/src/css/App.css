@@ -8,7 +8,7 @@
 body {
   background-color: #1d1e1f;
   color: #fafafa;
-  font-family: "Roboto", sans-serif;
+  font-family: "Georama", sans-serif;
 }
 
 .app {
@@ -109,6 +109,13 @@ a {
   width: 300px;
 }
 
+.auth__wrapper h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 100;
+  letter-spacing: 1.5px;
+}
+
 .auth__wrapper input {
   margin-bottom: 15px;
   border: none;
@@ -147,6 +154,16 @@ a {
   background: inherit;
   background: #55a78534;
   border-bottom: 2px solid #55a785;
+}
+
+.auth__error {
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 15px;
+  background-color: #a50000;
 }
 
 footer {
