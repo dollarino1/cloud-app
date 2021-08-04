@@ -14,10 +14,10 @@ const Registration = () => {
             <div className='auth__wrapper'>
                 <h3>Registration</h3>
                 <label htmlFor="emailForm">Email</label>
-                <Input type='email' value={email} setValue={setEmail}/>
+                <Input type='email' value={email} autocomplete='off' setValue={setEmail}/>
 
                 <label htmlFor="passwordForm">Password</label>
-                <Input type='password' value={password} setValue={setPassword}/>
+                <Input type='password' value={password} autocomplete='new-password' setValue={setPassword}/>
                 {error && <span className="auth__error">{error}</span>}
                 
                 <button onClick={ () => dispatch(registration(email, password))}>Sign Up</button>

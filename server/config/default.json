@@ -1,5 +1,6 @@
 {
     "serverPort": 5000,
     "dbUrl": "mongodb+srv://dollarino1:qwerty23@cluster-1.cc1p8.mongodb.net/cluster-1?retryWrites=true&w=majority",
-    "secretKey": "cloud-secret-key"
+    "secretKey": "cloud-secret-key",
+    "filePath": "F:\\Akmal\\WEB\\cloud-app\\server"
 }
