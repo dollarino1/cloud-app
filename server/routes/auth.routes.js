@@ -5,6 +5,8 @@ const { check, validationResult } = require('express-validator')
 const jwt = require('jsonwebtoken')
 const config = require('config')
 const authMiddleware = require('../middleware/auth.middleware')
+const fileService = require('../services/fileService')
+const File = require('../models/File')
 const router = new Router()
 
 router.post('/registration', 
@@ -30,7 +32,18 @@ router.post('/registration',
             const hashPassword = await bcrypt.hash(password, 0)
             const user = new User({email, password: hashPassword})
             await user.save()
-            return res.json({message: 'User was created'})
+            await fileService.createDir(new File({user: user.id, name: ''}))
+            const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "1h"})
+            return res.json({
+                token,
+                user: {
+                    id: user.id,
+                    email: user.email,
+                    diskSpace: user.diskSpace,
+                    usedSpace: user.usedSpace,
+                    avatar: user.avatar
+                }
+            })
         } catch(e) {
             console.log(e)
             res.send({message: "Server error"})

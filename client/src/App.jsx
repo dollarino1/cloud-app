@@ -4,33 +4,44 @@ import Login from './components/Private/Login';
 import Navbar from './components/Private/Navbar'
 import Registration from './components/Private/Registration';
 import './css/App.css'
-import { createContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './api/user';
-
-export const Context = createContext(null)
+import Disk from './components/disk/Disk';
 
 function App() {
   const isAuth = useSelector(state => state.users.isAuth)
   const dispatch = useDispatch()
 
   useEffect(() => {
+    // if user has logged previosly, checks his token from local storage, if true, app automatically logs user.
     dispatch(auth())
-    if(!isAuth) {
-      localStorage.removeItem('token')
-    }
   }, [])
+
+  useEffect (() => {
+        //remove user token on log out
+        if(!isAuth) {
+          localStorage.removeItem('token')
+        }
+  }, [isAuth])
+  
   return (
-    <Context.Provider>
       <BrowserRouter >
         <div className='app'>
           <Navbar />
-          {isAuth ? <div>logged in</div>
-          :<div className='wrapper'>
+          {isAuth ? //if user is authenticated
+          <div className='wrapper'>
             <Switch>
-              <Route path='/registration' component={Registration} exact={true} />
+              <Route exact path='/' component={Disk}/>
+              <Redirect to='/' />
+            </Switch>
+          </div>
+          : //if user is not authenticated
+          <div className='wrapper'>
+            <Switch>
+              <Route exact path='/registration' component={Registration} />
               <Route path='/login' component={Login} exact={true}  />
-              <Redirect to='/registration' />
+              <Redirect to='/login' />
             </Switch>
           </div>
           }
@@ -39,9 +50,7 @@ function App() {
 
           <Footer />
         </div>
-      </BrowserRouter>
-    </Context.Provider>
-    
+      </BrowserRouter>  
   );
 }
 

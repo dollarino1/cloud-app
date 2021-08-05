@@ -8,6 +8,9 @@ export const registration = (email, password) => {
                 email,
                 password
             })
+            console.log(response.data)
+            dispatch(setUser(response.data.user))
+            localStorage.setItem('token', response.data.token)
             console.log('Registration response data: ', response.data.message)
         } catch(e) {
             dispatch(setRegError(e.response.data.message))
@@ -23,6 +26,7 @@ export const login = (email, password) => {
                 email,
                 password
             })
+            console.log(response.data)
             dispatch(setUser(response.data.user))
             localStorage.setItem('token', response.data.token)
             console.log('login response data: ', response.data.message)

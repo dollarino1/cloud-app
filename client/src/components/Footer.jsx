@@ -6,8 +6,8 @@ const Footer = () => {
             <div className='footer'>
                 <p>All rights reserved.</p>
                 <ul>
-                    <li><a>cloud-app.netlify.net</a></li>
-                    <li><a>Help</a></li>
+                    <li><span>cloud-app.netlify.net</span></li>
+                    <li><span>Help</span></li>
                 </ul>
             </div>
         </footer>

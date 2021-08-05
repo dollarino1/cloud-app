@@ -29,3 +29,10 @@
         display: initial;
     }
 }
+.logo {
+    cursor: pointer;
+}
+.logo:hover {
+    transition: all 0.2s ease-out;
+    transform: scale(1.1);
+}

@@ -85,6 +85,17 @@ a {
   display: initial;
 }
 
+.logo {
+  cursor: pointer;
+}
+
+.logo:hover {
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .auth {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -184,5 +195,104 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.filelist {
+  margin: 50px 0;
+}
+
+.filelist__headings {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 17fr (3fr)[3];
+      grid-template-columns: 1fr 17fr repeat(3, 3fr);
+}
+
+.filelist__name {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+}
+
+.filelist__type {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  text-align: end;
+}
+
+.filelist__date {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  text-align: end;
+}
+
+.filelist__size {
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+  text-align: end;
+}
+
+.file {
+  cursor: pointer;
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.4fr 6fr (1fr)[3];
+      grid-template-columns: 0.4fr 6fr repeat(3, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  padding-bottom: 8px;
+}
+
+.file__logo {
+  width: 40px;
+}
+
+.file__name {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+
+.file__type {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  text-align: end;
+  margin-right: 10px;
+}
+
+.file__date {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  text-align: end;
+}
+
+.file__size {
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+  text-align: end;
+}
+
+.file:hover {
+  -webkit-transform: scale(1.005);
+          transform: scale(1.005);
+}
+
+.disk {
+  margin-top: 20px;
+}
+
+.disk button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.disk__buttons button {
+  margin-right: 10px;
 }
 /*# sourceMappingURL=App.css.map */

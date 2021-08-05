@@ -6,7 +6,7 @@ class FileController {
     async createDir(req, res) {
         try {
             const {name, type, parent} = req.body
-            const file = new File({name, type, parent, user: user.id})
+            const file = new File({name, type, parent, user: req.user.id})
             const parentFile = await File.findOne({_id: parent})
             if(!parentFile) {
                 file.path = name
@@ -22,6 +22,16 @@ class FileController {
         } catch(e) {
             console.log(e)
             return res.status(400).json(e)
+        }
+    }
+
+    async getFiles(req, res) {
+        try {
+            const files = await File.find({user: req.user.id, parent: req.query.parent})
+            return res.json(files)
+        } catch(e) {
+            console.log(e)
+            return res.status(500).json({message: "Can not get files"})
         }
     }
 }
