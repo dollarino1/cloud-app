@@ -2,7 +2,6 @@ import React from 'react'
 import dirLogo from '../../../../assets/dirLogo.svg'
 import fileLogo from '../../../../assets/fileLogo.png'
 const File = ({file}) => {
-    console.log('files', {file})
     return (
         <div className='file'>
             <img className='file__logo' src={file.type === 'dir' ? dirLogo : fileLogo}/>

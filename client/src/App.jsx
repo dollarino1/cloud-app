@@ -4,14 +4,18 @@ import Login from './components/Private/Login';
 import Navbar from './components/Private/Navbar'
 import Registration from './components/Private/Registration';
 import './css/App.css'
-import { useEffect } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './api/user';
 import Disk from './components/disk/Disk';
 
+export const Context = createContext(null)
+
 function App() {
   const isAuth = useSelector(state => state.users.isAuth)
   const dispatch = useDispatch()
+
+  const [popupDisplay, setPopupDisplay] = useState('none')
 
   useEffect(() => {
     // if user has logged previosly, checks his token from local storage, if true, app automatically logs user.
@@ -24,8 +28,12 @@ function App() {
           localStorage.removeItem('token')
         }
   }, [isAuth])
-  
+
   return (
+    <Context.Provider value={{
+      popupDisplay,
+      setPopupDisplay
+    }}> 
       <BrowserRouter >
         <div className='app'>
           <Navbar />
@@ -50,7 +58,8 @@ function App() {
 
           <Footer />
         </div>
-      </BrowserRouter>  
+      </BrowserRouter> 
+    </Context.Provider> 
   );
 }
 

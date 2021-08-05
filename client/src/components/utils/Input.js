@@ -5,7 +5,8 @@ const Input = (props) => {
             <input onChange={(e) => {props.setValue(e.target.value)}}
                 value={props.value}
                 type={props.type}
-                autoComplete={props.autoComplete}/>
+                autoComplete={props.autoComplete}
+                placeholder={props.placeholder}/>
     )
 }
 
